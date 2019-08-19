@@ -49,6 +49,9 @@ case $target in
   arm*-*-*)
     have_arm=true
     ;;
+  powerpc-*-*)
+    have_cell=true
+    ;;
 esac
 
 PTHREAD_FLAGS="-pthread"
@@ -113,6 +116,7 @@ AM_CONDITIONAL([USE_ASM], [test x$enable_assembly != xno])
 AM_CONDITIONAL([ARCH_x86], [test x$have_x86 = xtrue])
 AM_CONDITIONAL([ARCH_x86_64], [test x$have_x86_64 = xtrue])
 AM_CONDITIONAL([ARCH_ARM], [test x$have_arm = xtrue])
+AM_CONDITIONAL([ARCH_CELL], [test x$have_cell = xtrue])
 
 if test x$request_jansson = xtrue
 then

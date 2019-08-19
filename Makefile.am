@@ -29,8 +29,11 @@ endif
 if ARCH_ARM
 m_minerd_SOURCES += sha2-arm.S scrypt-arm.S
 endif
+if ARCH_CELL
+m_minerd_SOURCES += sha2-cell.S scrypt-cell.S
+endif
 endif
 m_minerd_LDFLAGS	= $(PTHREAD_FLAGS) -flto -fuse-linker-plugin -Ofast
 m_minerd_LDADD	= @LIBCURL@ @JANSSON_LIBS@ @PTHREAD_LIBS@ @WS2_LIBS@ @M7M_LIBS@ -lgmp -lcurl -lm
-m_minerd_CPPFLAGS = -Im7 -Ofast -march=native -flto -fuse-linker-plugin
+m_minerd_CPPFLAGS = -Im7 -Ofast -mcpu=cell -mtune=cell -flto -fuse-linker-plugin
 

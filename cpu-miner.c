@@ -1533,6 +1533,9 @@ static void show_version_and_exit(void)
 #if defined(__x86_64__) && defined(USE_XOP)
 		" XOP"
 #endif
+#if defined(ARCH_CELL)
+		" CELL-PS3"
+#endif
 #if defined(USE_ASM) && defined(__arm__) && defined(__APCS_32__)
 		" ARM"
 #if defined(__ARM_ARCH_5E__) || defined(__ARM_ARCH_5TE__) || \
