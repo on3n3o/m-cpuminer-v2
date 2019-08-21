@@ -49,10 +49,13 @@ case $target in
   arm*-*-*)
     have_arm=true
     ;;
-  powerpc-*-*)
+  powerpc*-*-*-*)
     have_cell=true
+    AC_MSG_NOTICE([TARGET SET FOR PLAYSTATION 3])
     ;;
 esac
+
+AC_MSG_NOTICE($target)
 
 PTHREAD_FLAGS="-pthread"
 WS2_LIBS=""
